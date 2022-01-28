@@ -4,55 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link
+    <title>VNV</title>
+    <!-- In <head> add scripts and styles to your html page -->
+    <script src="https://chat.valentabpo.onereach.ai/lib/richWebChat.umd.min.js"></script>
+    <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-    /> -->
+      href="https://chat.valentabpo.onereach.ai/lib/richWebChat.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Whatsapp icon</title>
-    <script type="text/javascript">
-      window.ymConfig = {
-        bot: "x1638331108775",
-        host: "https://cloud.yellow.ai",
-      };
-      (function () {
-        var w = window,
-          ic = w.YellowMessenger;
-        if ("function" === typeof ic)
-          ic("reattach_activator"), ic("update", ymConfig);
-        else {
-          var d = document,
-            i = function () {
-              i.c(arguments);
-            };
-          function l() {
-            var e = d.createElement("script");
-            (e.type = "text/javascript"),
-              (e.async = !0),
-              (e.src =
-                "https://cdn.yellowmessenger.com/plugin/widget-v2/latest/dist/main.min.js");
-            var t = d.getElementsByTagName("script")[0];
-            t.parentNode.insertBefore(e, t);
-          }
-          (i.q = []),
-            (i.c = function (e) {
-              i.q.push(e);
-            }),
-            (w.YellowMessenger = i),
-            w.attachEvent
-              ? w.attachEvent("onload", l)
-              : w.addEventListener("load", l, !1);
-        }
-      })();
-    </script>
   </head>
   <body>
-    <!-- <a
-      href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
-      class="float"
-      target="_blank"
-    >
-      <i class="fa fa-whatsapp my-float"></i>
-    </a> -->
+    <!-- insert code below into <body> -->
+    <div id="rwc"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var RWC = richWebChat.default;
+        var app = new RWC({
+          container: "#rwc", // DOM element selector where chat will be inserted
+          chatUrl:
+            "https://chat.valentabpo.onereach.ai/y2L3j9GsTDK1yvKBgWbpFw/0yibjez", // url of your chat. required
+          autoExpandDelay: 15000,
+          position: "bottom-right",
+          inviteMessage: "",
+          inviteButton: "",
+          inviteImage: undefined,
+          showCloseIcon: false,
+          inviteTimeout: 5000,
+          allowChangeChatWindowSize: true,
+          allowDrag: true,
+          widgetColor: "#409fec",
+          allowStartNewConversation: true,
+          thumbLogo: undefined,
+          animation: "pulse", // 'pulse', 'ring', 'zoom',
+          appearance: {
+            blurredBackground: false,
+          },
+          pageData: {
+            fname: "foo",
+          },
+        });
+      });
+    </script>
   </body>
 </html>
